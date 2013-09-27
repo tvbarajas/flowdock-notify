@@ -5,9 +5,6 @@ keywords:
   - notification
   - flowdock
 properties:
-  flow-api-token:
-    type: string
-    required: true
   from-address:
     type: string
     default: wercker
