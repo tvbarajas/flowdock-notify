@@ -52,3 +52,4 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 # Changelog
 
 ## v0.0.1 Initial release
+## v0.0.2 Ready for use
