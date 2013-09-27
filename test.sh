@@ -1,0 +1,15 @@
+export WERCKER_BUILD_ID=370760d3f7e04de19b44728b
+export WERCKER_APPLICATION_ID="a3b7750e8d234abba5e8f734"
+export WERCKER_RESULT=passed
+export WERCKER_FAILED_STEP_DISPLAY_NAME="Run tests"
+export WERCKER_STARTED_BY="Donec vel Ullamcorper "
+export WERCKER_APPLICATION_NAME="one"
+export WERCKER_APPLICATION_OWNER_NAME="acreator"
+export WERCKER_GIT_COMMIT="a3b7750e8d234abba5e8f7341ff6b9a3d5353fde"
+export WERCKER_GIT_BRANCH="master"
+export WERCKER_STEP_ROOT="."
+
+export WERCKER_FLOWDOCK_NOTIFY_FROM_ADDRESS="test@test.com"
+
+./run.sh
+bin/bash

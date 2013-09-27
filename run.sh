@@ -1,0 +1,1 @@
+node $WERCKER_STEP_ROOT/notify.js
