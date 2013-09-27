@@ -1,4 +1,5 @@
 name: flowdock-notify
+box: wercker/default
 version: 0.0.1
 description: Send a build success or failure notification to a Flowdock team inbox
 keywords:
