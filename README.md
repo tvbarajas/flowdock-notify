@@ -12,10 +12,12 @@ Send a build success/failure notification to a FlowDock team inbox
 
 # Example
 
+Add a pipeline environment variable: WERCKER_FLOWDOCK_NOTIFY_FLOW_API_TOKEN with your Flowdock token.
+
 ```yaml
 build:
   after-steps:
-    - tvbarajas/flowdock-notify:
+    - tbarajas/flowdock-notify:
         from-address: build@message.com
 ```
 
