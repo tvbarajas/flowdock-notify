@@ -1,5 +1,7 @@
 # flowdock-notify-step
 
+[![wercker status](https://app.wercker.com/status/d90ede1ea7ada3038cb5b0c4497c8e07/m "wercker status")](https://app.wercker.com/project/bykey/d90ede1ea7ada3038cb5b0c4497c8e07)
+
 Send a build success/failure notification to a FlowDock team inbox
 
 # Box Requirements

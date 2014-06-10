@@ -10,6 +10,6 @@ export WERCKER_GIT_BRANCH="master"
 export WERCKER_STEP_ROOT="."
 
 export WERCKER_FLOWDOCK_NOTIFY_FROM_ADDRESS="test@test.com"
+export WERCKER_FLOWDOCK_NOTIFY_FLOW_API_TOKEN="your test token"
 
 ./run.sh
-bin/bash

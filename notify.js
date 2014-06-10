@@ -29,30 +29,30 @@ Flowdock.prototype.actions = {
 Flowdock.prototype.request = function (request, data, callback) {
     var action = this.actions[request.action];
     var path = action.path;
-
     if (path.indexOf(':') > 0) {
         _.each(request.slugs, function (value, key, list) {
             path = path.replace(':' + key, value)
         }, this)
     }
 
-    if (data != null) {
-        path += '?' + querystring.stringify(data);
-    }
+    var message = JSON.stringify(data);
 
     var options = {
         hostname: 'api.flowdock.com',
         path: path,
         method: action.method,
-        headers: {"Content-Type": 'application/json'}
+        headers: {"Content-Type": "application/json", "Content-Length": message.length}
     };
     var req = https.request(options, function (res) {
+        res.setEncoding('utf-8');
+
         res.on('data', function (d) {
             var data = null;
             data = JSON.parse(d);
             callback(null, data);
         });
     });
+    req.write(message);
     req.end();
 
     req.on('error', function (e) {
@@ -73,12 +73,14 @@ if (result.toLowerCase() == 'failed') {
         "<p>Commit ID %s. Message:</p>" +
         "<pre>%s</pre>", step_name, commit_id, step_message);
     message = {
-        'from_address': from_address,
+        "from_address": from_address,
+        "from_name": "Wercker",
         'source': 'Wercker',
-        'subject': subject,
-        'content': content,
-        'project': application,
-        'link': util.format("https://app.wercker.com/#build/%s", build_id)
+        "subject": subject,
+        "content": content,
+        "tags": ["build"],
+        "project": application,
+        "link": util.format("https://app.wercker.com/#build/%s", build_id)
     }
 
     flowDockAPI.pushInboxMessage(message, function (err, results) {
@@ -89,18 +91,20 @@ if (result.toLowerCase() == 'failed') {
 } else {
     content = util.format("Commit ID ", commit_id);
     message = {
-        'from_address': from_address,
-        'source': 'Wercker',
-        'subject': subject,
-        'content': content,
-        'project': application,
-        'link': util.format("https://app.wercker.com/#build/%s", build_id)
+        "from_address": from_address,
+        "from_name": "Wercker",
+        "source": 'Wercker',
+        "subject": subject,
+        "content": content,
+        "tags": ["build"],
+        "project": application,
+        "link": util.format("https://app.wercker.com/#build/%s", build_id)
     }
 
     flowDockAPI.pushInboxMessage(message, function (err, results) {
         if (err) console.log('Error: ' + err);
         console.log('Notification sent');
-        console.log(results);
+        console.log('Results: ',results);
     });
 }
 
