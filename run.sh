@@ -1,1 +1,1 @@
-node $WERCKER_STEP_ROOT/notify.js
+node $WERCKER_STEP_ROOT/run.js

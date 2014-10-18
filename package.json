@@ -1,0 +1,12 @@
+{
+  "name": "flowdock-notify",
+  "version": "0.0.3",
+  "dependencies": {
+  },
+  "devDependencies" : {
+    "jasmine-node": "*"
+  },
+  "scripts" : {
+    "test" : "jasmine-node specs/unit"
+  }
+}
