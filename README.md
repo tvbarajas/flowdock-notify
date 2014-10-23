@@ -55,3 +55,5 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ## v0.0.1 Initial release
 ## v0.0.2 Ready for use
+## v0.0.3 First publish to Wercker
+## v0.0.4 Re-factor. Unit Tests. Added commitId to successful build message. 
