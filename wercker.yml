@@ -1,7 +1,10 @@
 box: wercker/ubuntu12.04-nodejs0.10@1.5.0
 build:
   steps:
-    - install-packages:
-        packages: npm
-    - npm-install
-    - npm-test
+    - script:
+        name: Install
+        code: npm install
+
+    - script:
+        name: Test
+        code: npm test
