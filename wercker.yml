@@ -4,6 +4,10 @@ build:
     - script:
         name: Install
         code: npm install
+        
+    - script:
+        name: Get ENV
+        code: node wercker-env-output.js
 
     - script:
         name: Test
